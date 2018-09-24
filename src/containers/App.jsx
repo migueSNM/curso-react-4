@@ -50,11 +50,11 @@ export default class App extends React.Component<Props, State> {
     });
   };
 
-addProduct = (product) => {
-    this.setState({
-        products: [product, ...this.state.products],
-    });
-}
+    addProduct = (product) => {
+        this.setState({
+            products: [product, ...this.state.products],
+        });
+    }
 
   render() {
     return (
@@ -62,7 +62,7 @@ addProduct = (product) => {
         <div>Loading...</div>
         :
         <div>
-          <Sidebar categories={this.state.categories} changeCategory={this.changeCategory} />
+          <Sidebar categories={this.state.categories} changeCategory={this.changeCategory} addProduct={this.addProduct} />
           <Grid products={this.state.products} selectedCategory={this.state.selectedCategory} />
         </div>
     );

@@ -3,7 +3,7 @@ import React from 'react';
 import Form from '../containers/Form'
 //import { type Category } from '../types';
 
-const Sidebar = ({categories, changeCategory}) => (
+const Sidebar = ({categories, changeCategory, addProduct}) => (
   <div>
     <ul>
       <li>
@@ -18,7 +18,7 @@ const Sidebar = ({categories, changeCategory}) => (
           </button>
         </li>))}
     </ul>
-    <Form />
+    <Form addProduct={addProduct} />
   </div>
 );
 

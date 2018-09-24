@@ -4,8 +4,8 @@ import axios, { type $AxiosXHR } from 'axios';
 class Form extends React.Component{
 
   state = {
-    name: '',
-    description: '',
+      name: '',
+      description: '',
       price: '',
       availability: true,
       categoryId: 1,
@@ -22,11 +22,13 @@ class Form extends React.Component{
   handleSubmit = (e) => {
       e.preventDefault();
 
-      axios.post('http://develop.plataforma5.la:3000/api/products', this.state)
+      const product = this.state;
+      axios.post('http://develop.plataforma5.la:3000/api/products', product)
           .then(res => {
               console.log(res);
               console.log(res.data);
-          });
+          })
+          .then(this.props.addProduct);
   };
 
   render() {
